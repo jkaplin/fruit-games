@@ -8,8 +8,9 @@ import fruitTree from "../../img/fruit-tree.svg";
 import apple1 from "../../img/shiny-apple.svg";
 import apple2 from "../../img/apple-core.svg";
 
-const TicTacToe = () => {
+const TicTacToe = props => {
   const initialSettings = {
+    mode: "single",
     placeholder: fruitTree,
     fruit1: apple1,
     fruit2: apple2
@@ -60,6 +61,11 @@ const TicTacToe = () => {
     }
     return "No Winner";
   };
+
+  useEffect(() => {
+    setGame(initialGame);
+    setGrid(initialGrid);
+  }, [settings, props.mode]);
 
   useEffect(() => {
     const winnerString = checkWin(grid);

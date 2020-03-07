@@ -1,13 +1,18 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 
 import GameMenu from "./components/GameMenu";
 import TicTacToe from "./games/tic-tac-toe";
 
 function App() {
+  const initialMode = "single";
+  const [mode, setMode] = useState(initialMode);
+  const changeMode = newMode => {
+    setMode(newMode);
+  };
   return (
     <Fragment>
-      <GameMenu />
-      <TicTacToe />
+      <GameMenu changeMode={changeMode} />
+      <TicTacToe mode={mode} />
     </Fragment>
   );
 }

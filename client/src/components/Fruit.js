@@ -1,16 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { ReactSVG } from "react-svg";
 
 import { Image } from "semantic-ui-react";
 
-const Fruit = ({ fruit, onClick, size = "small" }) => {
-  return <Image src={`img/${fruit.img}`} size={size} onClick={onClick} />;
-};
-
-Fruit.propTypes = {
-  fruit: PropTypes.object.isRequired,
-  onClick: PropTypes.func.isRequired,
-  size: PropTypes.string
+const Fruit = ({ fruit, onClick }) => {
+  return (
+    <ReactSVG
+      src={`http://localhost:3000/${fruit.svg}`}
+      beforeInjection={svg => {
+        svg.setAttribute("fill", "green");
+        svg.setAttribute("stroke", "green");
+      }}
+      onClick={onClick}
+    />
+  );
 };
 
 export default Fruit;

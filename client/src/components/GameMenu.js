@@ -37,6 +37,7 @@ const GameMenu = props => {
             <Form.Group>
               <Form.Field>
                 <Button
+                  onClick={() => props.changeMode("single")}
                   color="red"
                   content="Single-Player"
                   icon="heart"
@@ -50,6 +51,7 @@ const GameMenu = props => {
               </Form.Field>
               <Form.Field>
                 <Button
+                  onClick={() => props.changeMode("co")}
                   color="green"
                   content="Co-Players"
                   icon="fork"
@@ -63,6 +65,7 @@ const GameMenu = props => {
               </Form.Field>
               <Form.Field>
                 <Button
+                  onClick={() => props.changeMode("multi")}
                   color="blue"
                   content="Multi-Player"
                   icon="globe"
