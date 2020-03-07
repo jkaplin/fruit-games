@@ -10,6 +10,7 @@ const Fruit = ({ fruit, onClick }) => {
       src={`http://localhost:3000/${fruit.svg}`}
       beforeInjection={svg => {
         svg.setAttribute("fill", "green");
+        svg.setAttribute("fill", "green");
         svg.setAttribute("stroke", "green");
       }}
       onClick={onClick}
